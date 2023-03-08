@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LampArraySpotify (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "LampArraySpotify (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
