@@ -30,7 +30,7 @@ using Windows.UI.Core;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace LampArraySpotify
+namespace Synaesthesia
 {
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
@@ -192,7 +192,7 @@ namespace LampArraySpotify
 
         public void NotifyNowPlayingRequested()
         {
-            m_spotifyConnection.RequestCurrentlyPlaying();
+            _ = m_spotifyConnection.RequestCurrentlyPlaying();
         }
 
         public void RefreshNowPlayingUI()

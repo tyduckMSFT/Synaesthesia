@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Lights;
 using Windows.Devices.Lights.Effects;
 
-namespace LampArraySpotify
+namespace Synaesthesia
 {
     class VolumeVisualizerEffect : CustomLightingEffect
     {
