@@ -12,7 +12,7 @@ using Windows.Devices.Lights.Effects;
 using Windows.System;
 using Windows.UI;
 
-namespace LampArraySpotify
+namespace Synaesthesia
 {
     internal class PitchVisualizerEffect : CustomLightingEffect
     {

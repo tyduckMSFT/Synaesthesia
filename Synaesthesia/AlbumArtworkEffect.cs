@@ -12,7 +12,7 @@ using Windows.Devices.Lights.Effects;
 using Windows.Graphics.Imaging;
 using Windows.Storage.Streams;
 
-namespace LampArraySpotify
+namespace Synaesthesia
 {
     internal class AlbumArtworkEffect : LightingEffect
     {

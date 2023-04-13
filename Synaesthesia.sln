@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Synaesthesia (Package)", "Synaesthesia (Package)\Synaesthesia (Package).wapproj", "{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synaesthesia", "Synaesthesia\Synaesthesia.csproj", "{20593438-E8A4-4801-B349-44C68F0E5924}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|ARM64.Build.0 = Debug|ARM64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|x64.ActiveCfg = Debug|x64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|x64.Build.0 = Debug|x64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|x64.Deploy.0 = Debug|x64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|x86.ActiveCfg = Debug|x86
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|x86.Build.0 = Debug|x86
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Debug|x86.Deploy.0 = Debug|x86
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|ARM64.ActiveCfg = Release|ARM64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|ARM64.Build.0 = Release|ARM64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|ARM64.Deploy.0 = Release|ARM64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|x64.ActiveCfg = Release|x64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|x64.Build.0 = Release|x64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|x64.Deploy.0 = Release|x64
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|x86.ActiveCfg = Release|x86
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|x86.Build.0 = Release|x86
+		{90D95FAC-AD8A-4845-A1FB-4B5E9A58529D}.Release|x86.Deploy.0 = Release|x86
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Debug|ARM64.Build.0 = Debug|ARM64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Debug|x64.ActiveCfg = Debug|x64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Debug|x64.Build.0 = Debug|x64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Debug|x86.ActiveCfg = Debug|x86
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Debug|x86.Build.0 = Debug|x86
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Release|ARM64.ActiveCfg = Release|ARM64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Release|ARM64.Build.0 = Release|ARM64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Release|x64.ActiveCfg = Release|x64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Release|x64.Build.0 = Release|x64
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Release|x86.ActiveCfg = Release|x86
+		{20593438-E8A4-4801-B349-44C68F0E5924}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95806024-CCBE-4B50-9B6D-B36D645E0919}
+	EndGlobalSection
+EndGlobal
