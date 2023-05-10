@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
@@ -26,6 +27,7 @@ using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -60,6 +62,8 @@ namespace Synaesthesia
 
         private readonly DeviceWatcher m_deviceWatcher = DeviceInformation.CreateWatcher(LampArray.GetDeviceSelector());
         private Dictionary<string, LightingDevice> m_lightingDevices;
+
+        private readonly UISettings m_uiSettings = new();
 
         private readonly DispatcherQueue m_dispatcher = DispatcherQueue.GetForCurrentThread();
         public new DispatcherQueue DispatcherQueue { get => m_dispatcher; }
@@ -112,6 +116,9 @@ namespace Synaesthesia
 
             m_lightingDevices = new Dictionary<string, LightingDevice>();
 
+            m_uiSettings.ColorValuesChanged += Settings_ColorValuesChanged;
+            EvaluateSystemTheme();
+
             var enumVals = Enum.GetNames(typeof(LightingMode));
             LightingModeSelector.ItemsSource = enumVals.ToList();
             LightingModeSelector.SelectedIndex = 0;
@@ -121,6 +128,32 @@ namespace Synaesthesia
             m_deviceWatcher.Start();
 
             m_spotifyConnection = new SpotifyConnection(this);
+        }
+
+        private bool IsColorLight(Windows.UI.Color clr)
+        {
+            return (((5 * clr.G) + (2 * clr.R) + clr.B) > (8 * 128));
+        }
+
+        private void EvaluateSystemTheme()
+        {
+            var background = m_uiSettings.GetColorValue(UIColorType.Background);
+            if (IsColorLight(background))
+            {
+                MainGrid.RequestedTheme = ElementTheme.Light;
+            }
+            else
+            {
+                MainGrid.RequestedTheme = ElementTheme.Dark;
+            }
+        }
+
+        private void Settings_ColorValuesChanged(UISettings sender, object args)
+        {
+            m_dispatcher.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+            {
+                EvaluateSystemTheme();
+            });
         }
 
         public void OnNowPlayingUpdated()
