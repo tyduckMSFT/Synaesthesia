@@ -13,6 +13,8 @@ namespace Synaesthesia
     {
         private static readonly DateTime m_unixStart = new DateTime(1970, 1, 1);
         private LampArrayCustomEffect m_effect;
+
+        // This value represents 30 FPS refresh rate for Custom effects
         private const int m_callbackIntervalMs = 33;
 
         protected struct LampFadeout
@@ -121,11 +123,15 @@ namespace Synaesthesia
 
         private void CustomEffectUpdateRequested(LampArrayCustomEffect sender, LampArrayUpdateRequestedEventArgs args)
         {
-            RefreshNowPlayingIfNeeded();
+            if (sender == m_effect)
+            {
+                RefreshNowPlayingIfNeeded();
 
-            DoCustomEffectUpdate(args);
+                DoCustomEffectUpdate(args);
+                UpdateRemainingFrameCount();
 
-            UpdateNowPlaying();
+                UpdateNowPlaying();
+            }
         }
 
         protected abstract void DoCustomEffectUpdate(LampArrayUpdateRequestedEventArgs args);

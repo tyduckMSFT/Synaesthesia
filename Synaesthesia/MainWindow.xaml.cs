@@ -225,7 +225,10 @@ namespace Synaesthesia
 
         public void NotifyNowPlayingRequested()
         {
-            _ = m_spotifyConnection.RequestCurrentlyPlaying();
+            if (m_spotifyConnection != null)
+            {
+                _ = m_spotifyConnection.RequestCurrentlyPlaying();
+            }
         }
 
         public void RefreshNowPlayingUI()

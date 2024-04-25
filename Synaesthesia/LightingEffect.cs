@@ -29,12 +29,33 @@ namespace Synaesthesia
 
         public abstract ILampArrayEffect GetEffect();
 
+        private static readonly object s_lastRequestTimeLock = new();
+        private static DateTime s_lastRequestTime = DateTime.MinValue;
+
         public void RefreshNowPlayingIfNeeded()
+        {
+            bool updateNowPlaying = false;
+            lock (s_lastRequestTimeLock)
+            {
+                var currentTime = DateTime.Now;
+                if (s_lastRequestTime == DateTime.MinValue || currentTime - s_lastRequestTime > TimeSpan.FromSeconds(1))
+                {
+                    updateNowPlaying = true;
+                    s_lastRequestTime = currentTime;
+                }
+            }
+
+            if (updateNowPlaying)
+            {
+                m_mainWindow.NotifyNowPlayingRequested();
+            }
+        }
+
+        public void UpdateRemainingFrameCount()
         {
             if (m_effectFramesRemaining == 0)
             {
                 m_effectFramesRemaining = m_currentlyPlayingRefreshFrameCount;
-                m_mainWindow.NotifyNowPlayingRequested();
             }
             else
             {
